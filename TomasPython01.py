@@ -11,18 +11,18 @@ def os():
     print (a % b)
 
 
-# def texto():
-#    print (suma + "= ")
-#    print (resta)
-#    print (multiplicacion)
-#    print (division)
-#    print (division_entera)
-#    print (resto_division)
+def texto():
+    print (suma + "= ")
+    print (resta + "= ")
+    print (multiplicacion + "= ")
+    print (division + "= ")
+    print (division_entera)
+    print (resto_division)
 def resultado():
     print("Operaciones disponibles con " + a + " " + b)
 
 str(resultado)
-os()
+texto()
 
 
 
