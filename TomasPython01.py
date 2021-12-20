@@ -1,8 +1,28 @@
+from random import randint
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def automatico():
-    a = input("\003[1;34;40m Escribe el primer numero  \n")
+    print(bcolors.OKBLUE)
+    a = input(" Escribe el primer numero (#aleatorio#)  \n")
+    #if a == "aleatorio":
+    #    a1 = randint(1,100)
+    b = input("Escribe el segundo numero (#aleatorio#) \n")
+    #if b == "aleatorio":
+    #    b2 = randint(1,100)
+    #if a and b != "aleatorio":
     a = eval(a)
-    b = input("\003[1;34;40m Escribe el segundo numero \n")
     b = eval(b)
+    print(bcolors.ENDC)
 
     suma = (a + b) 
     resta = (a - b)
@@ -26,39 +46,45 @@ def automatico():
     texto()
 
 def manual():
-    a = print("Has elegido el modo Manual ", "\n Hay 6 opciones disponibles ", "\n suma, resta, multiplicacion, division, division_entera, resto_division", "\033[1,31,40m TIENES QUE ESCRIBIRLO TAL Y COMO ESTA \n" )
-    n1 = input("Escribe el primer numero ")
-    n1 = eval(n1)
-    n2 = input("Escribe el segundo numero ")
-    n2 = eval(n2)
+    print("Has elegido el modo Manual ", "\n Hay 6 opciones disponibles ", bcolors.OKBLUE, "\n suma , resta , multiplicacion , division , division_entera , resto_division" , bcolors.ENDC, bcolors.WARNING, "TIENES QUE ESCRIBIRLO TAL Y COMO ESTA \n", bcolors.ENDC )
+    a = input("Elige operacion: ")
+    print(bcolors.OKBLUE)
+    n1 = input("Escribe el primer numero (#aleatorio#) ")
+    #if n1 == "aleatorio":
+    #    s1 = randint(1, 100)
+    n2 = input("Escribe el segundo numero (#aleatorio#) ")
+    #if n2 == "aleatorio":
+        #s2 = randint(1,100)
+    #if n1 and n2 != "aleatorio":
+    s1 = eval(n1)
+    s2 = eval(n2)
+    print(bcolors.ENDC)
     
     if a == "suma":
-        print(n1 + n2)
+        print(s1, "+", s2, "= ", s1 + s2)
     if a == "resta":
-        print(n1 - n2)
+        print(s1, "-", s2, "= ", s1 - s2)
     if a == "multiplicacion":
-        print(n1 * n2)
+        print(s1, "*", s2, "= ", s1 * s2)
     if a == "division":
-        print(n1 / n2)
+        print(s1, "/", s2, "= ", s1 / s2)
     if a == "division_entera":
-        print(n1 // n2)
+        print(s1, "//", s2, "= ", s1 // s2)
     if a == "resto_division":
-        print(n1 % n2)
+        print(s1, "%", s2, "= ", s1 % s2)
 
 
-print("Elige el modo que quieres '\003[1;36;40m Automatico, Manual' ", "\n En el Modo Automatico se haran todas las operaciones ", "\n Mientras que en el modo Manual tu eliges que operacion queires hacer" )
+print("Elige el modo que quieres", bcolors.BOLD, "'Automatico, Manual' ", bcolors.ENDC, "\n En el", bcolors.BOLD, "Modo Automatico", bcolors.ENDC,  "se haran todas las operaciones ", "\n Mientras que en el", bcolors.BOLD ,  "Modo Manual", bcolors.ENDC ,  "tu eliges que operacion queires hacer" )
 modo = input("Elige el modo que quieras: ")
 
 if modo == "automatico":
     automatico()
-
 if modo == "manual":
     manual()
+# else:
+#    print (bcolors.FAIL, "Lo siento, no he encontrado ese modo en mi base de datos")
 
 
-
-
-
-
+# He puesto una clase para cambiar el color de las letras para que sea mas comodo a la vista
 
 
