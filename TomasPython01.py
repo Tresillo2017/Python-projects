@@ -121,7 +121,7 @@ def manual():
         print(s1, "%", s2, "= ", s1 % s2)
 
 
-print("Elige el modo que quieres", bcolors.BOLD, "'Automatico, Manual, Aleatorio' ", bcolors.ENDC, "\n En el", bcolors.BOLD, "Modo Automatico", bcolors.ENDC,  "se haran todas las operaciones ", "\n Mientras que en el", bcolors.BOLD ,  "Modo Manual", bcolors.ENDC ,  "tu eliges que operacion queires hacer" )
+print("Elige el modo que quieres", bcolors.BOLD, "'Automatico, Manual, Aleatorio' ", bcolors.ENDC, "\n En el", bcolors.BOLD, "Modo Automatico", bcolors.ENDC,  "se haran todas las operaciones ", "\n Mientras que en el", bcolors.BOLD ,  "Modo Manual", bcolors.ENDC ,  "tu eliges que operacion queires hacer", "\n", "En el", bcolors.BOLD, "modo aleatorio", bcolors.ENDC, "el primer y segundo numero es un valor aleatorio entre 1,100" )
 modo = input("Elige el modo que quieras: ")
 
 if modo == "automatico":
