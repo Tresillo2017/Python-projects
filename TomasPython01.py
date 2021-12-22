@@ -11,18 +11,17 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-def automatico():
+
+def aleatorio():
     print(bcolors.OKBLUE)
-    a = input(" Escribe el primer numero (#aleatorio#)  \n")
-    #if a == "aleatorio":
-    #    a1 = randint(1,100)
-    b = input("Escribe el segundo numero (#aleatorio#) \n")
-    #if b == "aleatorio":
-    #    b2 = randint(1,100)
-    #if a and b != "aleatorio":
-    a = eval(a)
-    b = eval(b)
+    print("Primer numero")
+    a = randint(1,100)
+    print(a)
+    print("Segundo el numero")
+    b = randint(1,100)
+    print(b)
     print(bcolors.ENDC)
+
 
     suma = (a + b) 
     resta = (a - b)
@@ -31,6 +30,40 @@ def automatico():
     division_entera = (a // b)
     resto_division = (a % b)
 
+
+def automatico():
+    print(bcolors.OKBLUE)
+    a = input(" Escribe el primer numero (#aleatorio#)  \n")
+    if a == "aleatorio":
+        a1 = randint(1,100)
+    b = input("Escribe el segundo numero (#aleatorio#) \n")
+    if b == "aleatorio":
+        b2 = randint(1,100)
+    if a and b != "aleatorio":
+        a = eval(a)
+        b = eval(b)
+    print(bcolors.ENDC)
+
+    suma = (a1 + b2) 
+    resta = (a1 - b2)
+    multiplicacion = (a1 * b2)
+    division = (a1 / b2)
+    division_entera = (a1 // b2)
+    resto_division = (a1 % b2)
+
+
+    def texto():
+        print (a, "+", b, "= ", suma)
+        print (a, "-", b, "= ", resta)
+        print (a, "*", b, "= ", multiplicacion)
+        print (a, "/", b, "= ", division)
+        print (a, "//", b, "= ", division_entera)
+        print (a, "%", b, "= ", resto_division)
+    def resultado():
+        print("Operaciones disponibles con ", a, "y", b)
+
+    resultado()
+    texto()
 
     def texto():
         print (a, "+", b, "= ", suma)
@@ -74,13 +107,15 @@ def manual():
         print(s1, "%", s2, "= ", s1 % s2)
 
 
-print("Elige el modo que quieres", bcolors.BOLD, "'Automatico, Manual' ", bcolors.ENDC, "\n En el", bcolors.BOLD, "Modo Automatico", bcolors.ENDC,  "se haran todas las operaciones ", "\n Mientras que en el", bcolors.BOLD ,  "Modo Manual", bcolors.ENDC ,  "tu eliges que operacion queires hacer" )
+print("Elige el modo que quieres", bcolors.BOLD, "'Automatico, Manual, Aleatorio' ", bcolors.ENDC, "\n En el", bcolors.BOLD, "Modo Automatico", bcolors.ENDC,  "se haran todas las operaciones ", "\n Mientras que en el", bcolors.BOLD ,  "Modo Manual", bcolors.ENDC ,  "tu eliges que operacion queires hacer" )
 modo = input("Elige el modo que quieras: ")
 
 if modo == "automatico":
     automatico()
 if modo == "manual":
     manual()
+if modo == "aleatorio":
+    aleatorio()
 # else:
 #    print (bcolors.FAIL, "Lo siento, no he encontrado ese modo en mi base de datos")
 
