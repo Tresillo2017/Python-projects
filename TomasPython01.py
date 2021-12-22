@@ -30,6 +30,20 @@ def aleatorio():
     division_entera = (a // b)
     resto_division = (a % b)
 
+    def texto():
+        print (a, "+", b, "= ", suma)
+        print (a, "-", b, "= ", resta)
+        print (a, "*", b, "= ", multiplicacion)
+        print (a, "/", b, "= ", division)
+        print (a, "//", b, "= ", division_entera)
+        print (a, "%", b, "= ", resto_division)
+    def resultado():
+        print("Operaciones disponibles con ", a, "y", b)
+
+    resultado()
+    texto()
+
+
 
 def automatico():
     print(bcolors.OKBLUE)
