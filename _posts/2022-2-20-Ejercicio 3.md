@@ -2,10 +2,6 @@
 title: Ejercicio 3
 published: true
 ---
-
-
-# Ejercicio 3
-
 - Enunciado
 > Escribe un programa que genere las siguientes salidas en su ejecucion. 
 
