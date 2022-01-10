@@ -13,11 +13,11 @@ print("Programa sobre numeros pares\n")
 print("Escribe un numero que sea par", bcolors.OKBLUE)
 numero = input()
 print(bcolors.ENDC)
-resultado = numero % 2
-if numero = 0:
+resultado = int(numero) % 2
+if numero == 0:
     print(bcolors.OKBLUE, " CORRECTO !!!", bcolors.ENDC)
 
 print(bcolors.HEADER, "El numero", numero, " ", "es un numero par", bcolors.ENDC)
 
-print(numero, "/ ", "2", "= ", numero / 2)
+print(int(numero), "/ ", "2", "= ", numero / 2)
 
