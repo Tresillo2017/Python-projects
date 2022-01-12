@@ -35,7 +35,7 @@ else:
 if (numero % 7 == 0):
     print("El numero", bcolors.OKGREEN, numero, bcolors.ENDC, bcolors.OKBLUE, "SI", bcolors.ENDC, "es divisible por 7")
 else:
-    print("El numero", bcolors.OKGREEN, numero, bcolors.ENDC, "NO es divisible por 7")
+    print("El numero", bcolors.OKGREEN, numero, bcolors.ENDC, "NO es divisible por 7") # bcolors.OKBLUE "SI",  bcolor.WARNING "NO"
 
 if (numero % 11 == 0):
     print("El numero", bcolors.OKGREEN, numero, bcolors.ENDC, "SI es divisible por 11")
