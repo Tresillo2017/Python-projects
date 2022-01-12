@@ -1,3 +1,22 @@
+---
+title: Ejercicio 3
+published: true
+---
+- Enunciado
+> Escribe un programa que genere las siguientes salidas en su ejecucion. 
+
+```
+Programa sobre numeros pares                                Programa sobre numeros pares
+Escribe un numero que sea par: 24                           Escribe un numero que sea par: 24
+CORRECTO !!!                                                Oh, lo siento !!
+El numero 24 es un numero par                               El numero 31 no es un numero par 
+24 / 2 = 12.0                                               31 / 2 = 15.5
+```
+
+
+- Codigo
+
+```python
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -27,4 +46,4 @@ else:
     print(bcolors.FAIL,"Lo siento el numero ",numero, "no puedo clasificarlo", bcolors.ENDC)
 
 print(int(numero), "/ ", "2", "= ", int(numero) / 2)
-
+```
