@@ -12,10 +12,7 @@ CORRECTO !!!                                                Oh, lo siento !!
 El numero 24 es un numero par                               El numero 31 no es un numero par 
 24 / 2 = 12.0                                               31 / 2 = 15.5
 ```
-
-
 - Codigo
-
 ```python
 class bcolors:
     HEADER = '\033[95m'
