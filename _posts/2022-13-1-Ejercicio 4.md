@@ -2,6 +2,7 @@
 title: Ejercicio 4
 published: true
 ---
+
 - Enunciado 
 > Escribe un programa que genere las siguientes salidas en su ejecucion:
 ```
