@@ -5,6 +5,7 @@ published: true
 
 - Enunciado 
 > Escribe un programa que genere las siguientes salidas en su ejecucion:
+
 ```
 Programa para comprobar si un numero es divisible o no por 2, 3, 5, 7 y 11
 Escribe un numero: 132
@@ -17,6 +18,7 @@ El numero 132 SI es divisible por 11
 ```
 
 - Codigo
+
 ```python
 class bcolors:
     HEADER = '\033[95m'
