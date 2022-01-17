@@ -1,10 +1,9 @@
 ---
-title: Ejercicio 6
+title: Ejercicio 7
 published: true
 ---
 - Enunciado
-> Realizar un programa que muestre sólo los números pares comprendidos entre 1 y 1000 
-
+> Realizar un programa que muestre sólo los números impares comprendidos entre 1 y 1000 
 
 
 - Codigo
@@ -21,11 +20,11 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-print("Numeros pares entre 1, 1000")
+print("Numeros impares entre 1, 1000")
 
 for n in range(1,1000):
-    if (n % 2 == 0):
-        print(bcolors.OKBLUE,n, bcolors.ENDC,"es un numero par\n")
+    if (n % 2 == 1):
+        print(bcolors.OKBLUE,n, bcolors.ENDC,"es un numero impar\n")
     else:
         print("")
 ```
