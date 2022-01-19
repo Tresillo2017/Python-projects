@@ -10,9 +10,9 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 print("Numeros impares entre 1, 1000")
-
-for n in range(1,1000):
-    if (n % 2 == 1):
-        print(bcolors.OKBLUE,n, bcolors.ENDC,"es un numero impar\n")
-    else:
-        print("")
+print("Introduce el numero")
+numero = eval(input(bcolors.OKBLUE))
+print(bcolors.ENDC)
+for n in range(1,numero):
+    if (numero % n == 0):
+        print(bcolors.OKCYAN, numero, bcolors.ENDC, "es divisible por", bcolors.WARNING, n, bcolors.ENDC)
