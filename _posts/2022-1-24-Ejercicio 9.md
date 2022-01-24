@@ -1,5 +1,5 @@
 ---
-title: Ejercicio 8
+title: Ejercicio 9
 published: true
 ---
 
@@ -8,6 +8,7 @@ published: true
 
 
 - Codigo
+
 ```python
 class bcolors:
     HEADER = '\033[95m'
@@ -29,5 +30,4 @@ print(bcolors.ENDC)
 for p in range(2, numero):
     if (n % p == 0):
         print(bcolors.OKCYAN, p, bcolors.ENDC, "es divisor de", bcolors.HEADER, n, bcolors.ENDC)
-
 ```
