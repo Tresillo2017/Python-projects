@@ -45,5 +45,5 @@ if longitud <= 5:
 if longitud > 5:
     print("La palabra", bcolors.OKBLUE,palabra , bcolors.ENDC,"tiene", bcolors.OKCYAN, len(palabra[:10]), bcolors.ENDC, "letras")
     print("Las cuatro primeras letras son", bcolors.OKGREEN, palabra[0:4], bcolors.ENDC)
-    print("Las cuatros ultimas letras son", bcolors.OKGREEN, palabra[3:], bcolors.ENDC)
+    print("Las cuatros ultimas letras son", bcolors.OKGREEN, palabra[-4:], bcolors.ENDC)
 ```
