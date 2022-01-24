@@ -15,6 +15,6 @@ n = eval(input(bcolors.OKBLUE))
 numero = n-1
 print(bcolors.ENDC)
 
-for p in range(2, numero):
-    if (n % p == 0):
-        print(bcolors.OKCYAN, p, bcolors.ENDC, "es divisor de", bcolors.HEADER, n, bcolors.ENDC)
+for p in range(1, numero):
+    if (numero % p != 0):
+        print(bcolors.OKCYAN, p, bcolors.ENDC, "es primo", bcolors.HEADER, n, bcolors.ENDC)
