@@ -58,6 +58,8 @@ print(bcolors.BOLD,"en total hay",bcolors.ENDC,bcolors.OKGREEN,contador,bcolors.
 
 
 - Codigo con modulo sympy
+
+
 ```python
 import time
 
