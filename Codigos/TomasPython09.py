@@ -20,19 +20,19 @@ print(bcolors.ENDC)
 
 def esprimo(k):
     if k> 1:
-        for n in range(2, k):
-            if (k % n) == 0:
-                return False
-        return True
+        for n in range(2, k): # Define un rango desde 2 hasta k 
+            if (k % n) == 0: # Comprueba si k / n su resto da 0
+                return False  # No es primo
+        return True # Es primo
     else:
-        return False
+        return False # No es primo
 
-for n in range(2, k):
-        if esprimo(n) == True:
-            print(bcolors.HEADER, n, bcolors.ENDC, "es primo", bcolors.WARNING,"(True)", bcolors.ENDC)
-            contador = contador + 1
-            time.sleep(0.1)
+for n in range(2, k): # Define un rango desde 2 hasta k
+        if esprimo(n) == True: # Si la funcion 'esprimo' da true entra en el bucle
+            print(bcolors.HEADER, n, bcolors.ENDC, "es primo", bcolors.WARNING,"(True)", bcolors.ENDC) # Imprime en pantalla que n es primo
+            contador = contador + 1 # Suma 1 al contador
+            time.sleep(0.1) # Espera 0.1 segundos
         else:
-            time.sleep(0)
+            time.sleep(0) # Espera 0 segundos
 
 print(bcolors.BOLD,"en total hay",bcolors.ENDC,bcolors.OKGREEN,contador,bcolors.ENDC,bcolors.BOLD,"numeros que son primos desde el 2 hasta",bcolors.OKCYAN,k,bcolors.ENDC)
