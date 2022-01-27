@@ -1,6 +1,6 @@
 from cmath import sqrt
-from traceback import print_tb
-from turtle import pen
+from importlib.abc import SourceLoader
+from json.tool import main
 
 
 class bcolors:
@@ -24,15 +24,18 @@ print(bcolors.ENDC,"\n","Introduce el valor de c", bcolors.OKCYAN)
 c = eval(input())
 print(bcolors.ENDC)
 
-def solucion(a, b, c):
-    x1 = b*2 - 4*a*c
-    if x1 < 0:
-        print(bcolors.FAIL, "No hay soluciones", bcolors.ENDC)
-    elif x1 >= 0:
-        x2 = -b/2*x
-        print("La unica solucion es", bcolors.BOLD, x2, bcolors.ENDC)
-    else:
-        a1 = (-b + sqrt(x1))/2*a
-        a2 = (-b - sqrt(x1))/2*a
-        print("La primera solucion es", bcolors.OKCYAN, a1, bcolors.ENDC)
-        print("La segunda solucion es", bcolors.OKBLUE, a2, bcolors.ENDC)
+
+x1 = (b*2) - (4*a*c)
+print(x1)
+if x1 < 0:
+    print(bcolors.FAIL, "No hay soluciones", bcolors.ENDC)
+elif x1 >= 0:
+    x2 = -b/2*x
+    print("La unica solucion es", bcolors.BOLD, x2, bcolors.ENDC)
+else:
+    a1 = (-b + sqrt(x1))/2*a
+    a2 = (-b - sqrt(x1))/2*a
+    print("La primera solucion es", bcolors.OKCYAN, a1, bcolors.ENDC)
+    print("La segunda solucion es", bcolors.OKBLUE, a2, bcolors.ENDC)
+        
+
