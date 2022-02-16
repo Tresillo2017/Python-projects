@@ -14,13 +14,14 @@ print("Ingresa el palindromo")
 palindromo = input(bcolors.OKBLUE)
 print(bcolors.ENDC)
 
-def espalindromo(s):
+# def espalindromo(s):
+for s in palindromo:
     if s == s[::-1]:
-        # print("Palabra:",s)
-        return True
+        print("es palindromo")
+        # return True
     else:
-        # print("Palabra:",s)
-        return False
+        print("No es palindromo")
+        # return False
 
 comprobacion = espalindromo(palindromo)
 
