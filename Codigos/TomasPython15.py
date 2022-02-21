@@ -30,20 +30,20 @@ print(bcolors.ENDC)
 print(bcolors.HEADER, "Introduce el valor de y")
 y = eval(input(bcolors.OKBLUE))
 print(bcolors.ENDC)
-  
+
 
 
 def esta_dentro(xc, yc, x, y, radio):
-    distancia = ((x-xc)**2+(y-yc)**2)**0.5
+    distancia = ((x-xc)**2+(y-yc)**2)**0.5 
     if distancia <= radio:
         return "dentro del circulo"
-    elif distancia == radio:
-        return "sobre el circulo"
+    elif distancia == radio: # abs(distancia - radio) <= 10^(-d) siendo d el numero de digitos decimales
+       return "sobre el circulo"
     else:
         return "fuera del circulo"
     
 while True:
-    print(bcolors.OKBLUE, "Esta", esta_dentro(xc, yc, x, y, radio) , bcolors.ENDC)
+    print(bcolors.OKBLUE, "Esta", esta_dentro(xc, yc, x, y, radio) , bcolors.ENDC, "\n")
     print("Quieres introducir otro punto (y/n)")
     sigo = input(bcolors.OKCYAN)
     print(bcolors.ENDC)  
