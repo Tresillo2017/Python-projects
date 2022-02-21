@@ -11,45 +11,50 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+print(bcolors.HEADER, "Introduce el valor del radio")
+radio = eval(input(bcolors.OKBLUE))
+print(bcolors.ENDC)
 
-print(bcolors.HEADER, "Imprime el valor de x centro")
+print(bcolors.HEADER, "Introduce el valor de x centro")
 xc = eval(input(bcolors.OKBLUE))
 print(bcolors.ENDC)
 
-print(bcolors.HEADER, "Imprime el valor de y centro")
+print(bcolors.HEADER, "Introduce el valor de y centro")
 yc = eval(input(bcolors.OKBLUE))
 print(bcolors.ENDC)
 
-print(bcolors.HEADER, "Imprime el valor de x")
+print(bcolors.HEADER, "Introduce el valor de x")
 x = eval(input(bcolors.OKBLUE))
 print(bcolors.ENDC)
 
-print(bcolors.HEADER, "Imprime el valor de y")
-x = eval(input(bcolors.OKBLUE))
+print(bcolors.HEADER, "Introduce el valor de y")
+y = eval(input(bcolors.OKBLUE))
 print(bcolors.ENDC)
   
-# preguntas_centro()
-# preguntas()
 
-def distancia():
-    valor = ((x-xc)**2+(y-yc)**2)**0.5
-    return distancia
-    print("Quieres introducir mas valores (y/n)")
-    
-    print = distancia()
+
+def esta_dentro(xc, yc, x, y, radio):
+    distancia = ((x-xc)**2+(y-yc)**2)**0.5
+    if distancia <= radio:
+        return "dentro del circulo"
+    elif distancia == radio:
+        return "sobre el circulo"
+    else:
+        return "fuera del circulo"
     
 while True:
+    print(bcolors.OKBLUE, "Esta", esta_dentro(xc, yc, x, y, radio) , bcolors.ENDC)
+    print("Quieres introducir otro punto (y/n)")
     sigo = input(bcolors.OKCYAN)
     print(bcolors.ENDC)  
     if sigo == "y" or sigo == "Y":
-        print(bcolors.HEADER, "Imprime el valor de x")
+        print(bcolors.HEADER, "Introduce el valor de x")
         x = eval(input(bcolors.OKBLUE))
         print(bcolors.ENDC)
 
-        print(bcolors.HEADER, "Imprime el valor de y")
+        print(bcolors.HEADER, "Introduce el valor de y")
         x = eval(input(bcolors.OKBLUE))
         print(bcolors.ENDC)
-        distancia(x, y)
     else:
         break
 
