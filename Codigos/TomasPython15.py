@@ -31,11 +31,12 @@ print(bcolors.HEADER, "Introduce el valor de y")
 y = eval(input(bcolors.OKBLUE))
 print(bcolors.ENDC)
 
-
+# abs(distancia - radio) <= pow(10, -2)
+# distancia == radio
 
 def esta_dentro(xc, yc, x, y, radio):
-    distancia = ((x-xc)**2+(y-yc)**2)**0.5 
-    if distancia <= radio:
+    distancia = sqrt(pow(x-xc, 2)+ pow(y-yc, 2))
+    if distancia < radio:
         return "dentro del circulo"
     elif distancia == radio: # abs(distancia - radio) <= 10^(-d) siendo d el numero de digitos decimales
        return "sobre el circulo"
