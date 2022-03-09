@@ -1,32 +1,118 @@
-title: Hacker-Blog
-description: "Python Projects"
+# Base blog settings
+baseurl                      : "/tresillo2017.github.io/Python-Projects" # the subpath of your site,                         # e.g. /blog/
+                              # set to '' in case of hosting on GitHub
+url                          : "" # the base hostname & protocol for your site
+                                  # `http://<username>.github.io` - for GitHub
+
+blog:
+  title                      : Computacion
+  description                  : >
+                               Codigos y programas de python y arduino
+
+# Layout configuration
+  logo_path                  : "assets/img/dactl.svg" # path to logo file
+  search_path                : # "yourgitusername.github.io"
+                               # needed for searchbox in archive page
+  hero_layout                : true # turn on hero layout for blog and posts
+  hero_placeholder           : "assets/img/generic_hero.jpg" # placeholder for hero image
+  excerpts                   : true # show excerpts instead of full post content on blog page
+  inline_footnotes           : true # enable/disable barefoot inline footnotes
+  titles_only                : false # show post titles only on main blog page
+
+# Fonts
+  font                       : '"Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif'
+  load_google_fonts          : 'Rubik:400,400italic,700,700italic'
+
+
+# Author info
 author:
-  name: "Tomas"
-  email: "tresillo2017@gmail.com"
-  url: "https://ashishchaudhary.in/hacker-blog"
+  fullname                  : Tomas Palma
+  rss                       : true # generate RSS feed and show it's icon in header
+  mail                      : tomas_ps@onmail.com # change to your e-mail address
+  twitter                   : toomas_ps
+  github                    : tresillo2017
+  youtube                   : tresillo_crack
+  stackoverflow             : 
+  disqus                    : dactl # your disqus site name
+  google_analytics          : # 'UA-XXXXXXXX-X'
+  photo                     : "uploads/me2.png"
+  photo2x                   : "uploads/me.png"
 
-baseurl: /
 
-source: .
-destination: ./_site
-permalink: /:title
-paginate: 3
-paginate_path: /page/:num/
 
+## !!
+## Advanced blog settings
+## You should not change anything here unless you know what you are doing
+
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Permalinks
+permalink                    : posts/:slug
+
+# Posts
+excerpt_separator            : <!–-break-–>
+
+# Pagination
+paginate                     : 5
+paginate_path                : '/page-:num/'
+
+# Tags
+collections:
+  my_tags:
+    output: true
+    permalink: /tag/:slug/
 defaults:
   -
     scope:
       path: ""
-      type: "posts"
+      type: my_tags
     values:
-      layout: "post"
+      layout: blog-by-tag
 
-future: true
-plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-sitemap
+# Handling Reading
+exclude                    : ["README.md", "README.html"]
 
-# Custom variables
-owner : "Tomas Palma"
-year : "2021"
+# https://github.com/jekyll/jekyll/issues/4619
+# Markdown and highlighter settings
+markdown: kramdown
+# !github-pages! mandatory › https://help.github.com/articles/using-jekyll-with-pages/#configuration-settings-you-cannot-change
+# Since Jekyll 3 the default highlighter is Rouge (replaced Pygments.rb in v44)
+highlighter: rouge
+
+# More › http://kramdown.gettalong.org/quickref.html
+# Options › http://kramdown.gettalong.org/options.html
+kramdown:
+  input:          GFM
+  # https://github.com/jekyll/jekyll/pull/4090
+  syntax_highlighter: rouge
+
+  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # span, block element options fall back to global
+  syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    # css_class: 'highlight'
+    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Sass settings
+sass:
+  sass_dir                : _sass
+  style                   : compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings               : all
+  endings                 : all
+  comments                : ["<!-- ", " -->"]
+  blanklines              : true
+  profile                 : false
+  ignore:
+  envs                    : [local]
