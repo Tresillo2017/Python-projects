@@ -2,8 +2,11 @@
 layout: default
 ---
 
-<article>
-  <h2>{{ page.title }}</h2>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
-  {{ content }}
-</article>
+
+{% include post.html post=page %}
+
+{% if site.author.disqus %}
+    {% include externals/disqus.html %}
+{% endif %}
+
+{% include post/related.html %}

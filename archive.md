@@ -1,38 +1,51 @@
 ---
 layout: page
 title: Archive
+permalink: /archive/
+weight: 5
+sitemap:
+  priority: 0.9
 ---
 
-<section>
-  {% if site.posts[0] %}
+<div class="page">
 
-    {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
-    {% capture firstpostyear %}{{ site.posts[0].date | date: '%Y' }}{% endcapture %}
-    {% if currentyear == firstpostyear %}
-        <h3>This year's posts</h3>
-    {% else %}  
-        <h3>{{ firstpostyear }}</h3>
-    {% endif %}
+{% capture page_subtitle %}
+  {% include page/searchbox.html %}
+{% endcapture %}
 
-    {%for post in site.posts %}
-      {% unless post.next %}
-        <ul>
-      {% else %}
-        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-        {% if year != nyear %}
-          </ul>
-          <h3>{{ post.date | date: '%Y' }}</h3>
-          <ul>
-        {% endif %}
-      {% endunless %}
-        <li><time>{{ post.date | date:"%d %b" }} - </time>
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            {{ post.title }}
-          </a>
-        </li>
-    {% endfor %}
-    </ul>
+{% include page/title.html title=page.title subtitle=page_subtitle %}
 
-  {% endif %}
-</section>
+    {% for post in site.posts %}
+
+    {% assign category = site.my_categories | where: "slug", post.category %}
+    {% assign category = category[0] %}
+      {% if category %}
+        {% capture category_content %}<a class="label" href="{{ category.url }}">{{ category.name }}</a>{% endcapture %}
+      {% endif %}
+
+  	{% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+  	{% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
+  		{% if month != nmonth %}
+  			{% if forloop.index != 1 %}
+  			</ul>
+  			{% endif %}
+  			<h1>{% include utils/date_custom_short.html date = post.date %}</h1>
+  			<ul class="related-posts">
+  		{% endif %}
+
+      {% include page/post-list-item.html %}
+
+      {% comment %}
+      tagi w archiwum <span class="post-tag right">{{ tags_content }}</span>
+      {% endcomment %}
+
+     {% endfor %}
+  	 </ul>
+
+
+  {% comment %}
+    {% include utils/tag-box.html %}
+  {% endcomment %}
+
+
+</div>
